@@ -30,7 +30,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/no-duplicates': 'off',
     'space-before-function-paren': 'off',
-    'comma-dangle': 'off'
+    'comma-dangle': 'off',
+    'import/export': 'off'
   },
   settings: {
     'import/extensions': ['.js', '.ts'],
