@@ -1,0 +1,41 @@
+{
+  "name": "wordpress-sdk",
+  "description": "Wordpress REST API wrapper built with axios",
+  "version": "0.0.3",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "axios",
+    "wordpress"
+  ],
+  "files": [
+    "dist"
+  ],
+  "repository": "https://github.com/iclouds/wordpress-sdk",
+  "author": "Thawan Keane <thawankeane@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -cw",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^24.0.13",
+    "eslint": "^5.16.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "rollup": "^1.12.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5"
+  }
+}
