@@ -16,20 +16,47 @@
   "author": "Thawan Keane <thawankeane@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepare": "npm run build",
+    "prepublishOnly": "lint-staged",
     "dev": "rollup -cw",
     "build": "rollup -c"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "lib/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "eslint-plugin-import": "^2.17.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "@commitlint/cli": "^7.6.1",
     "@commitlint/config-conventional": "^7.6.0",
     "@types/axios": "^0.14.0",
     "@types/jest": "^24.0.13",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
     "rollup": "^1.12.3",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^10.0.0",
