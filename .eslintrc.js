@@ -28,7 +28,9 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'import/no-duplicates': 'off'
+    'import/no-duplicates': 'off',
+    'space-before-function-paren': 'off',
+    'comma-dangle': 'off'
   },
   settings: {
     'import/extensions': ['.js', '.ts'],
