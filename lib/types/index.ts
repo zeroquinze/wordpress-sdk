@@ -1,5 +1,3 @@
+export * from './core'
 export * from './posts'
-
-export interface WordpressOptions {
-  url: string
-}
+export * from './categories'

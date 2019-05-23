@@ -1,4 +1,4 @@
-# Wordpress SDK
+# W.I.P Wordpress SDK
 
 Built with [axios](https://www.npmjs.com/package/axios), this package provides a wrapper for [Wordpress REST API](https://developer.wordpress.org/rest-api/) for fetching data from wordpress hosted sites.
 
@@ -24,6 +24,19 @@ wordpress
   .allPosts()
   .then(posts => {
     console.log(posts)
+  })
+  .catch(error => {
+    console.log(error.message)
+  })
+```
+
+### Fetching categories
+
+```js
+wordpress
+  .allCategories()
+  .then(categories => {
+    console.log(categories)
   })
   .catch(error => {
     console.log(error.message)

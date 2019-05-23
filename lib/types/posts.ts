@@ -1,6 +1,6 @@
-export interface ListPostsOptions {
-  limit?: number
-  page?: number
+import { ListOptions } from './core'
+
+export interface PostsOptions extends ListOptions {
   order?: 'asc' | 'desc'
   orderBy?:
     | 'author'

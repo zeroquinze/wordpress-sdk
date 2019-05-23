@@ -1,6 +1,12 @@
 import axios, { AxiosInstance } from 'axios'
 
-import { WordpressOptions, ListPostsOptions, Post } from './types'
+import {
+  WordpressOptions,
+  ListOptions,
+  PostsOptions,
+  Post,
+  Category
+} from './types'
 
 class Wordpress {
   private http: AxiosInstance
@@ -12,7 +18,7 @@ class Wordpress {
   }
 
   public async allPosts(
-    options: ListPostsOptions = {
+    options: PostsOptions = {
       limit: 10,
       page: 1,
       order: 'desc',
@@ -26,6 +32,23 @@ class Wordpress {
         per_page: options.limit,
         order: options.order,
         orderby: options.orderBy
+      }
+      /* eslint-enable */
+    })
+    return response.data
+  }
+
+  public async allCategories(
+    options: ListOptions = {
+      limit: 10,
+      page: 1
+    }
+  ): Promise<Category[]> {
+    const response = await this.http.get('/categories', {
+      /* eslint-disable */
+      params: {
+        page: options.page,
+        per_page: options.limit
       }
       /* eslint-enable */
     })
