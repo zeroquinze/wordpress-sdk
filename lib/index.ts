@@ -7,7 +7,7 @@ class Wordpress {
 
   public initialize(options: WordpressOptions) {
     this.http = axios.create({
-      baseURL: options.url,
+      baseURL: options.url
     })
   }
 
@@ -16,8 +16,8 @@ class Wordpress {
       limit: 10,
       page: 1,
       order: 'desc',
-      orderBy: 'date',
-    },
+      orderBy: 'date'
+    }
   ): Promise<Post[]> {
     const response = await this.http.get('/posts', {
       /* eslint-disable */
@@ -25,12 +25,13 @@ class Wordpress {
         page: options.page,
         per_page: options.limit,
         order: options.order,
-        orderby: options.orderBy,
-      },
+        orderby: options.orderBy
+      }
       /* eslint-enable */
     })
     return response.data
   }
 }
 
-export default new Wordpress()
+export const wordpress = new Wordpress()
+export * from './types'

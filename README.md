@@ -1,17 +1,17 @@
 # Wordpress SDK
 
-Built with [axios](https://www.npmjs.com/package/axios), this package provides a wrapper for [Wordpress REST API](https://developer.wordpress.org/rest-api/) for fetch data from wordpress hosted sites.
+Built with [axios](https://www.npmjs.com/package/axios), this package provides a wrapper for [Wordpress REST API](https://developer.wordpress.org/rest-api/) for fetching data from wordpress hosted sites.
 
 ## Usage
 
 ### Creating an instance
 
 ```js
-import wp from 'wordpress-sdk'
+import { wordpress } from 'wordpress-sdk'
 // or
-const wp = require('wordpress')
+const { wordpress } = require('wordpress')
 
-wp.initialize({
+wordpress.initialize({
   // your wordpress rest api base URL
   url: 'https://developer.wordpress.org/wp-json/wp/v2',
 })
@@ -20,7 +20,8 @@ wp.initialize({
 ### Fetching posts
 
 ```js
-wp.allPosts()
+wordpress
+  .allPosts()
   .then(posts => {
     console.log(posts)
   })
