@@ -7,9 +7,9 @@ Built with [axios](https://www.npmjs.com/package/axios), this package provides a
 ### Creating an instance
 
 ```js
-import wordpress from 'wordpress-sdk'
+import wp from 'wordpress-sdk'
 // or
-const wordpress = require('wordpress')
+const wp = require('wordpress')
 
 wp.initialize({
   // your wordpress rest api base URL
