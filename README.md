@@ -1,10 +1,18 @@
-# W.I.P Wordpress SDK
+# [WIP] Wordpress SDK
 
 Built with [axios](https://www.npmjs.com/package/axios), this package provides a wrapper for [Wordpress REST API](https://developer.wordpress.org/rest-api/) for fetching data from wordpress hosted sites.
 
+## Installation
+
+`$ npm install wordpress-sdk --save`
+
+or if you use yarn
+
+`$ yarn add wordpress-sdk`
+
 ## Usage
 
-### Creating an instance
+### Initializing configuration
 
 ```js
 import { wordpress } from 'wordpress-sdk'
