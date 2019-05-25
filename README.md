@@ -1,5 +1,7 @@
 # [WIP] Wordpress SDK
 
+[![npm](https://img.shields.io/npm/v/wordpress-sdk.svg)](https://www.npmjs.com/package/wordpress-sdk) [![GitHub](https://img.shields.io/github/license/iclouds/wordpress-sdk.svg)](https://opensource.org/licenses/MIT)
+
 Built with [axios](https://www.npmjs.com/package/axios), this package provides a wrapper for [Wordpress REST API](https://developer.wordpress.org/rest-api/) for fetching data from wordpress hosted sites.
 
 ## Installation
