@@ -1,6 +1,14 @@
 import { ListOptions } from './core'
 
 export interface PostsOptions extends ListOptions {
+  author?: number
+  author_exclude?: number
+  status?: string
+  categories?: number[]
+  categories_exclude?: number[]
+  tags?: number[]
+  tags_exclude?: number[]
+  sticky?: boolean
   order?: 'asc' | 'desc'
   orderBy?:
     | 'author'
