@@ -1,9 +1,7 @@
-import {
-  ListOptions,
-} from './core'
+import { ListOptions } from './core'
 
 export interface CategoriesOptions extends ListOptions {
-  parent?: number;
+  parent?: number
 }
 
 export interface Category {
