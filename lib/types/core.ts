@@ -3,6 +3,11 @@ export interface WordpressOptions {
 }
 
 export interface ListOptions {
-  limit?: number
   page?: number
+  per_page?: number
+  search?: string
+  exclude?: number
+  include?: number
+  order?: 'asc' | 'desc'
+  slug?: string
 }
