@@ -3,6 +3,7 @@ import axios, { AxiosInstance } from 'axios'
 import {
   WordpressOptions,
   PostsOptions,
+  RetrievePostOptions,
   Post,
   Category,
   CategoriesOptions,
@@ -22,9 +23,16 @@ class Wordpress {
       per_page: 10,
       page: 1,
       order: 'desc',
-      orderBy: 'date',
+      orderby: 'date',
     },
   ): Promise<Post[]> {
+    const response = await this.http.get('/posts', {
+      params: options,
+    })
+    return response.data
+  }
+
+  public async getPost(options: RetrievePostOptions): Promise<Post> {
     const response = await this.http.get('/posts', {
       params: options,
     })
