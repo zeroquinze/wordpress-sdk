@@ -32,8 +32,18 @@ class Wordpress {
     return response.data
   }
 
-  public async getPost(options: RetrievePostOptions): Promise<Post> {
-    const response = await this.http.get('/posts', {
+  /**
+   *
+   * Retrieve a post by unique ID.
+   *
+   * @param id Unique ID of post.
+   * @param options Query options
+   */
+  public async getPostById(
+    id: number,
+    options: RetrievePostOptions,
+  ): Promise<Post> {
+    const response = await this.http.get(`/posts/${id}`, {
       params: options,
     })
     return response.data
