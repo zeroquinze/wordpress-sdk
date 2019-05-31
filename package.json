@@ -1,7 +1,7 @@
 {
   "name": "wordpress-sdk",
   "description": "Wordpress REST API wrapper built with axios",
-  "version": "0.1.4",
+  "version": "0.2.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -35,14 +35,13 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.19.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@commitlint/cli": "^7.6.1",
     "@commitlint/config-conventional": "^7.6.0",
     "@commitlint/travis-cli": "^7.6.1",
-    "@types/axios": "^0.14.0",
     "@types/jest": "^24.0.13",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
