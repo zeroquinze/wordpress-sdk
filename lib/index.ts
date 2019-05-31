@@ -6,6 +6,7 @@ import {
   RetrievePostOptions,
   Post,
   Category,
+  RetrieveCategoryOptions,
   CategoriesOptions,
 } from './types'
 
@@ -56,6 +57,23 @@ class Wordpress {
     },
   ): Promise<Category[]> {
     const response = await this.http.get('/categories', {
+      params: options,
+    })
+    return response.data
+  }
+
+  /**
+   *
+   * Retrieve a category by unique ID.
+   *
+   * @param id Unique ID of category.
+   * @param options Query options
+   */
+  public async getCategoryById(
+    id: number,
+    options: RetrieveCategoryOptions,
+  ): Promise<Category> {
+    const response = await this.http.get(`/categories/${id}`, {
       params: options,
     })
     return response.data
