@@ -10,4 +10,5 @@ export interface ListOptions {
   include?: number
   order?: 'asc' | 'desc'
   slug?: string
+  offset?: number
 }

@@ -8,6 +8,8 @@ import {
   Category,
   RetrieveCategoryOptions,
   CategoriesOptions,
+  User,
+  ListUsersOptions,
 } from './types'
 
 class Wordpress {
@@ -76,6 +78,25 @@ class Wordpress {
     const response = await this.http.get(`/categories/${id}`, {
       params: options,
     })
+    return response.data
+  }
+
+  public async allUsers(options?: ListUsersOptions): Promise<User[]> {
+    const response = await this.http.get(`/users`, {
+      params: options,
+    })
+    return response.data
+  }
+
+  /**
+   *
+   * Retrieve a user by unique ID.
+   *
+   * @param id Unique ID of user.
+   * @param options Query options
+   */
+  public async getUserById(id: number): Promise<Post> {
+    const response = await this.http.get(`/users/${id}`)
     return response.data
   }
 }
