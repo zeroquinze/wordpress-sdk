@@ -56,8 +56,8 @@ try {
 ```js
 wordpress
   .allCategories()
-  .then(categories => {
-    console.log(categories)
+  .then(response => {
+    console.log(response.categories)
   })
   .catch(error => {
     console.log(error.message)
