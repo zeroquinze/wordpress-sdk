@@ -32,12 +32,23 @@ wordpress.initialize({
 ```js
 wordpress
   .allPosts()
-  .then(posts => {
-    console.log(posts)
+  .then(response => {
+    console.log(response.posts)
   })
   .catch(error => {
     console.log(error.message)
   })
+```
+
+Or using async await
+
+```js
+try {
+  const { posts } = await wordpress.allPosts()
+  console.log(posts)
+} catch (error) {
+  console.log(error.message)
+}
 ```
 
 ### Fetching categories
@@ -51,4 +62,15 @@ wordpress
   .catch(error => {
     console.log(error.message)
   })
+```
+
+Or using async await
+
+```js
+try {
+  const { categories } = await wordpress.allCategories()
+  console.log(categories)
+} catch (error) {
+  console.log(error.message)
+}
 ```

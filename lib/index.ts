@@ -28,11 +28,15 @@ class Wordpress {
       order: 'desc',
       orderby: 'date',
     },
-  ): Promise<Post[]> {
-    const response = await this.http.get('/posts', {
+  ): Promise<{ total: number; pages: number; posts: Post[] }> {
+    const { data, headers } = await this.http.get('/posts', {
       params: options,
     })
-    return response.data
+    return {
+      total: headers['x-wp-total'],
+      pages: headers['x-wp-totalpages'],
+      posts: data,
+    }
   }
 
   /**
@@ -57,11 +61,16 @@ class Wordpress {
       per_page: 10,
       page: 1,
     },
-  ): Promise<Category[]> {
-    const response = await this.http.get('/categories', {
+  ): Promise<{ total: number; pages: number; categories: Category[] }> {
+    const { data, headers } = await this.http.get('/categories', {
       params: options,
     })
-    return response.data
+
+    return {
+      total: headers['x-wp-total'],
+      pages: headers['x-wp-totalpages'],
+      categories: data,
+    }
   }
 
   /**
@@ -81,11 +90,17 @@ class Wordpress {
     return response.data
   }
 
-  public async allUsers(options?: ListUsersOptions): Promise<User[]> {
-    const response = await this.http.get(`/users`, {
+  public async allUsers(
+    options?: ListUsersOptions,
+  ): Promise<{ total: number; pages: number; users: User[] }> {
+    const { data, headers } = await this.http.get(`/users`, {
       params: options,
     })
-    return response.data
+    return {
+      total: headers['x-wp-total'],
+      pages: headers['x-wp-totalpages'],
+      users: data,
+    }
   }
 
   /**
